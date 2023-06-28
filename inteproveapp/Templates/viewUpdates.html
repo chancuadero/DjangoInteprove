@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Updates</title>
+                <style>
+                body{
+                        text-align: center;
+                    }
+                .btn{
+                        background-color: #339DFF;
+                        border: none;
+                        border-radius: 3px;
+                        color: white;
+                        padding: 10px 20px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;
+                        font-weight: bold;
+                        cursor: pointer;
+                        margin-top: 15px;
+                    }
+                td{
+                        padding: 15px 90px;
+                        border: 1px solid;
+                        background-color: white;
+                    }
+                .td{
+                        padding: 10px 20px;
+                        border: 1px solid;
+                        background-color: white;
+                        font-weight: bold;
+                    }
+                 table{
+                        background-color: #19376D;
+                        padding: 2px;
+                    }
+                 .div-updates{
+                        border: 1px solid;
+                        margin: 50px 200px;
+                        padding: 10px;
+                    }
+                 th{
+                        padding: 10px;
+                        background-color: #EBD8B2;
+                    }
+                 h1{
+                        font-weight: bold;
+                        color: red;
+                    }
+                .category{
+                        font-weight: bold;
+                        font-size: 17px;
+                    }
+        </style>
+</head>
+<body>
+    <div class="topnav">
+          <a href="/inteproveapp/researcherView"><input type="button" value="Home"  class="btn"></a>
+          <a href="/inteproveapp/viewAllocation"><input type="button" value="View Allocation"  class="btn"></a>
+          <a href="/inteproveapp/signOut"> <input type="button" value="Sign Out"  class="btn"> </a>
+    </div>
+
+          <div class="div-updates" >
+            <table align="center">
+                <tr>
+                <td class="td"></td>
+                <td><h1>New Updates!</h1></td>
+                </tr>
+            {% for u in updates%}
+              <tr>
+                <td class="td">Category:</td>
+                <td class="category">{{u.category}}</td>
+             </tr>
+             <tr>
+                <td class="td">Notes:</td>
+                <td>{{u.notes}}</td>
+             </tr>
+             <tr>
+                <td class="td">Date Added:</td>
+                <td>{{u.date}}</td>
+             </tr>
+             <tr>
+            <th colspan="2"></th>
+            </tr>
+            {% endfor %}
+             </table>
+        </div>
+</body>
+</html>

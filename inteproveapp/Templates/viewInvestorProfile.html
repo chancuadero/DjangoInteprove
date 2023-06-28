@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Investor Profiles</title>
+                    <style>
+                body{
+                        text-align: center;
+                    }
+
+                .btn{
+                        background-color: #339DFF;
+                        border: none;
+                        border-radius: 3px;
+                        color: white;
+                        padding: 10px 20px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;
+                        font-weight: bold;
+                        cursor: pointer;
+                        margin-top: 15px;
+                    }
+                 table tr, td{
+                        padding: 5px;
+                        border: 1px solid;
+                        background-color: white;
+                    }
+
+                .tr-header{
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+                 table{
+                    background-color: #19376D;
+                    padding: 2px;
+                    margin-top: 50px;
+                 }
+                 .btn-view{
+                        background-color: #339DFF;
+                        border: none;
+                        border-radius: 3px;
+                        color: white;
+                        padding: 6px 13px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 12px;
+                        font-weight: bold;
+                        cursor: pointer;
+                        margin: 5px;
+                    }
+        </style>
+</head>
+<body>
+    <div class="topnav">
+          <a href="/inteproveapp/investorView"><input type="button" value="Home"  class="btn"></a>
+          <a href="/inteproveapp/signOut"> <input type="button" value="Sign Out"  class="btn"> </a>
+    </div>
+    <table border="1" align="center">
+            <tr>
+                <td>Profile Name</td>
+                <td>Profile Type</td>
+                <td>Date</td>
+                <td>View Profile</td>
+            </tr>
+    {% for i in investor%}
+
+        <form method="POST">
+            {% csrf_token %}
+            <tr>
+                <td>{{ i.profilename }}</td>
+                <td>{{ i.profiletype }}</td>
+                <td>{{ i.date }}</td>
+                </td>
+                <input type="hidden" name="id" value="{{profile.7}}">
+                <td><a href="{% url 'inteproveapp:investorProfile' id=i.investorprofileid %}" class="btn-view" target="_blank">View</a></td>
+            </tr>
+              </form>
+
+    {% endfor %}
+    </table>
+</body>
+</html>

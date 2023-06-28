@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ADD INVESTOR PROFILES</title>
+        <style>
+                body{
+                        text-align: center;
+                    }
+                .btn{
+                        background-color: #339DFF;
+                        border: none;
+                        border-radius: 3px;
+                        color: white;
+                        padding: 10px 20px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;
+                        font-weight: bold;
+                        cursor: pointer;
+                        margin-top: 15px;
+                    }
+                .form{
+                        border: 1px solid;
+                        margin: 50px 400px;
+                        padding: 10px;
+                    }
+                .form input[type="text"]{
+                        padding: 10px;
+                        width: 200px;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        font-size: 16px;
+                        margin-left: 10px;
+                    }
+                .form label{
+                        font-size: 16px;
+                        font-weight: bold;
+                    }
+
+        </style>
+</head>
+<body>
+            <a href="/inteproveapp/supervisorView"><input type="button" value="Home"  class="btn"> </a>
+            <a href="/inteproveapp/viewProfile"> <input type="button" value="View Profiles"  class="btn"> </a>
+            <a href="/inteproveapp/viewProject"><input type="button" value="View Project"  class="btn"> </a>
+            <a href="/inteproveapp/addUpdates"> <input type="button" value="Updates"  class="btn"> </a>
+            <a href="/inteproveapp/signOut"> <input type="button" value="Sign Out"  class="btn"> </a>
+
+
+    <h1>Add Investor Profiles</h1>
+
+        <div class="form">
+            <form action="" method="post">
+                    {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="Submit"  class="btn">
+
+            </form>
+        </div>
+</body>
+</html>

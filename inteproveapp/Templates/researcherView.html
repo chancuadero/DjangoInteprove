@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Researcher</title>
+            <style>
+                body{
+                        text-align: center;
+                    }
+                h1{
+                        text-align: left;
+                        margin-left: 400px;
+                        margin-top: 40px;
+                    }
+
+                .btn{
+                        background-color: #339DFF;
+                        border: none;
+                        border-radius: 3px;
+                        color: white;
+                        padding: 10px 20px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;
+                        font-weight: bold;
+                        cursor: pointer;
+                        margin-top: 15px;
+                    }
+
+                .div-task{
+                        border: 1px solid;
+                        margin: 50px 400px;
+                    }
+                .div-task h3{
+                        text-align: left;
+                        margin-left: 40px;
+                    }
+                .div-task li{
+                        text-align: left;
+                        margin-left: 80px;
+                        font-size: 20px;
+                    }
+        </style>
+</head>
+<body >
+    <div class="topnav">
+          <a href="/inteproveapp/researcherView"><input type="button" value="Home"  class="btn"></a>
+          <a href="/inteproveapp/viewAllocation"><input type="button" value="View Allocation"  class="btn"></a>
+          <a href="/inteproveapp/viewUpdates"> <input type="button" value="Updates"  class="btn"> </a>
+          <a href="/inteproveapp/signOut"> <input type="button" value="Sign Out"  class="btn"> </a>
+    </div>
+
+            <h1>Hi! {{ first_name }} {{ last_name }}</h1>
+
+        <div class="div-task">
+            <h3>TASKS:</h3>
+            <ol type="1">
+                <li>Prioritize adhoc task (if any)</li>
+                <li>Build investor profiles (see view allocation section)</li>
+                <li>Check new updates</li>
+            </ol>
+        </div>
+</body>
+</html>

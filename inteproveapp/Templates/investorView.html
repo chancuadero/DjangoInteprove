@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Investor View</title>
+                <style>
+                body{
+                        text-align: center;
+                    }
+                h1{
+                        text-align: left;
+                        margin-left: 400px;
+                        margin-top: 40px;
+                    }
+                h2{
+                        text-align: left;
+                        margin-left: 400px;
+                        margin-top: 40px;
+                    }
+
+                .btn{
+                        background-color: #339DFF;
+                        border: none;
+                        border-radius: 3px;
+                        color: white;
+                        padding: 10px 20px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;
+                        font-weight: bold;
+                        cursor: pointer;
+                        margin-top: 15px;
+                    }
+
+        </style>
+</head>
+<body>
+    <div class="topnav">
+          <a href="/inteproveapp/investorView"><input type="button" value="Home"  class="btn"></a>
+          <a href="/inteproveapp/viewInvestorProfile"><input type="button" value="View Investor"  class="btn"></a>
+          <a href="/inteproveapp/signOut"> <input type="button" value="Sign Out"  class="btn"> </a>
+    </div>
+                    <h2>Welcome to InteProve!</h2>
+            <h1>Hi! {{ first_name }} {{ last_name }}</h1>
+
+
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REGISTER ACCOUNT</title>
+        <style>
+            body{
+                    text-align: center;
+                    background-color: #D3D3D3;
+                }
+            input[type="text"],
+            input[type="password"]{
+                     padding: 10px;
+                     width: 200px;
+                     border: 1px solid #ccc;
+                     border-radius: 4px;
+                     font-size: 16px;
+                }
+
+            label{
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+             .btn{
+                     background-color: #339DFF;
+                     border: none;
+                     border-radius: 3px;
+                     color: white;
+                     padding: 10px 20px;
+                     text-align: center;
+                     text-decoration: none;
+                     display: inline-block;
+                     font-size: 16px;
+                     font-weight: bold;
+                     cursor: pointer;
+                     margin-top: 10px;
+                }
+            .div-btn{
+                      margin-right: 100px;
+                     margin-left: 180px;
+                }
+
+            .div-signup{
+                    border: 1px solid;
+                    padding: 35px;
+                    margin: 80px 350px;
+                    background-color: white;
+                }
+            h4{
+                opacity: 0.5;
+                }
+            form select{
+                        padding: 10px;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        font-size: 16px;
+                        margin-left: 10px;
+                        font-weight: bold;
+                }
+        </style>
+</head>
+<body>
+
+<div class="div-signup">
+     <h1>Register</h1>
+    <h4>Please fill in this form to create an account.</h4>
+     <form action="" method="post">
+            {% csrf_token %}
+        {{form.as_p}}
+
+        <div class="div-btn">
+            <input type="submit" value="Sign-Up" class="btn">
+            <a href="/inteproveapp/login"> <input type="button" value="Log-In" class="btn"> </a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

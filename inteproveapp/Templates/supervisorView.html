@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Supervisor</title>
+    <style>
+                body{
+                        text-align: center;
+                    }
+                h1{
+                        text-align: left;
+                        margin-left: 370px;
+                        margin-top: 40px;
+                    }
+                .btn{
+                        background-color: #339DFF;
+                        border: none;
+                        border-radius: 3px;
+                        color: white;
+                        padding: 10px 20px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;
+                        font-weight: bold;
+                        cursor: pointer;
+                        margin-top: 15px;
+                    }
+                .div-task{
+                        border: 1px solid;
+                        margin: 50px 370px;
+                    }
+                .div-task h3{
+                        text-align: left;
+                        margin-left: 40px;
+                    }
+                .div-task li{
+                        text-align: left;
+                        margin-left: 80px;
+                        font-size: 20px;
+                    }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="topnav">
+            <a href="/inteproveapp/supervisorView"><input type="button" value="Home"  class="btn"></a>
+            <a href="/inteproveapp/addInvestor"> <input type="button" value="Add Profile"  class="btn"> </a>
+            <a href="/inteproveapp/viewProfile"><input type="button" value="View Profiles"  class="btn"> </a>
+            <a href="/inteproveapp/viewProject"><input type="button" value="View Project"  class="btn"> </a>
+            <a href="/inteproveapp/addUpdates"> <input type="button" value="Updates"  class="btn"> </a>
+            <a href="/inteproveapp/signOut"> <input type="button" value="Sign Out"  class="btn"></a>
+    </div>
+
+            <h1>Hi! {{ first_name }} {{ last_name }}</h1>
+
+        <div class="div-task">
+            <h3>TASKS:</h3>
+            <ol type="1">
+                <li>Check adhoc task</li>
+                <li>Assign the remaining unallocated profiles.</li>
+                <li>Check status of the project.</li>
+                <li>Create performance report.</li>
+                <li>Add new updates(if any).</li>
+            </ol>
+        </div>
+</body>
+</html>

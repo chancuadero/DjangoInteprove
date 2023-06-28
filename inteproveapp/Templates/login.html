@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN</title>
+
+    <style>
+            body{
+                background-color: #D3D3D3;
+                text-align: center;
+            }
+
+            .div-login{
+                    border: 1px solid;
+                    padding: 35px;
+                    margin: 90px 350px;
+                    background-color: white;
+            }
+
+
+            .fieldWrapper input[type="text"],
+            .fieldWrapper input[type="password"] {
+                        padding: 10px;
+                        width: 200px;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        font-size: 16px;
+                        }
+            .fieldWrapper label{
+                        font-size: 16px;
+                        font-weight: bold;
+            }
+
+
+             .btn{
+                        background-color: #339DFF;
+                        border: none;
+                        border-radius: 3px;
+                        color: white;
+                        padding: 10px 20px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;
+                        font-weight: bold;
+                        cursor: pointer;
+                        margin-top: 10px;
+                }
+
+            .div-btn{
+                        margin-right: 100px;
+                        margin-left: 180px;
+            }
+
+            .div-ip{
+                border: 1px;
+                background-color: #339DFF;
+                padding: 20px;
+                font-size: 20px;
+            }
+    </style>
+</head>
+<body>
+
+<div class="div-login">
+        <div class="div-ip">
+    <h1>InteProve</h1>
+        </div>
+    <h2>Login</h2>
+    {% if error != "" %}
+            <i>{{error}}</i>
+        {% endif %}
+    <br>
+    <br>
+    <form action="" method="post">
+            {% csrf_token %}
+        {% for field in form %}
+        <div class="fieldWrapper">
+            {# uncomment to display field errors #}
+            {# {{ field.errors }} #}
+
+            {{ field.label_tag }} {{ field }}
+        </div>
+    {% endfor %}
+
+        <div class="div-btn">
+        <input type="submit" value="Log-In" class="btn">
+       <a href="/inteproveapp/register"> <input type="button" value="Sign-Up" class="btn"> </a>
+        </div>
+
+    </form>
+   </div>
+</body>
+</html>

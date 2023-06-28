@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Allocation</title>
+    <style>
+                body{
+                        text-align: center;
+                    }
+                .btn{
+                        background-color: #339DFF;
+                        border: none;
+                        border-radius: 3px;
+                        color: white;
+                        padding: 10px 20px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;
+                        font-weight: bold;
+                        cursor: pointer;
+                        margin-top: 15px;
+                    }
+                .btn-update{
+                        background-color: #339DFF;
+                        border: none;
+                        border-radius: 3px;
+                        color: white;
+                        padding: 5px 10px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 12px;
+                        font-weight: bold;
+                        cursor: pointer;
+                        margin: 5px;
+                    }
+                .btn-edit{
+                        background-color: #339DFF;
+                        border: none;
+                        border-radius: 3px;
+                        color: white;
+                        padding: 6px 13px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 12px;
+                        font-weight: bold;
+                        cursor: pointer;
+                        margin: 5px;
+                    }
+                table tr, td{
+                        padding: 5px;
+                        border: 1px solid;
+                        background-color: white;
+                    }
+
+                .tr-header{
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+                 table{
+                    background-color: #19376D;
+                    padding: 2px;
+                 }
+
+    </style>
+
+</head>
+<body align="center">
+    <a href="/inteproveapp/researcherView"><input type="button" value="Home"  class="btn"></a>
+    <a href="/inteproveapp/viewUpdates"> <input type="button" value="Updates"  class="btn"> </a>
+    <a href="/inteproveapp/signOut"> <input type="button" value="Sign Out"  class="btn"> </a>
+    <h1>Priority Builds</h1>
+
+
+    <table border="1" align="center">
+            <tr>
+                <td>Project Name</td>
+                <td>Profile Name</td>
+                <td>Profile Type</td>
+                <td>Status</td>
+                <td>Task ID</td>
+                <td>Date</td>
+                <td>Update Status</td>
+                <td>Update</td>
+                <td>Edit Profile</td>
+            </tr>
+
+{% for profile in results %}
+
+      <form method="POST">
+            {% csrf_token %}
+            <tr>
+                <td>{{ profile.0 }}</td>
+                <td>{{ profile.1 }}</td>
+                <td>{{ profile.2 }}</td>
+                <td>{{ profile.3 }}</td>
+                <td>{{ profile.4 }}</td>
+                <td>{{ profile.5 }}</td>
+                <td>
+                    <select name="status">
+                        <option value="Not Started">Not Started</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                </td>
+                <input type="hidden" name="id" value="{{profile.7}}">
+                <td><button type="submit"  class="btn-update">Update Status</button></td>
+                <td><a href="{% url 'inteproveapp:updateProfile' iid=profile.7 %}" class="btn-edit" target="_blank">Edit</a></td>
+            </tr>
+              </form>
+ {% endfor %}
+
+    </table>
+
+
+
+
+
+</body>
+</html>

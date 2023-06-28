@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Investor Profile</title>
+            <style>
+                body{
+                        text-align: center;
+                    }
+                tr, td{
+                        padding: 10px;
+                        border: 1px solid;
+                        background-color: white;
+                    }
+
+                th{
+                        font-size: 20px;
+                        font-weight: bold;
+                        padding: 10px;
+                        background-color: #EBD8B2;
+                    }
+                 table{
+                        background-color: #19376D;
+                        padding: 10px;
+                        border: 1px solid;
+                    }
+                 h1{
+                        margin-top: 30px;
+                    }
+
+             input[type="text"]{
+                         padding: 10px;
+                         width: 200px;
+                         border: 1px solid #ccc;
+                         border-radius: 4px;
+                         font-size: 16px;
+                    }
+
+            label{
+                        font-size: 16px;
+                        font-weight: bold;
+                    }
+
+    </style>
+</head>
+<body>
+  {% for ii in investors%}
+      <h1>{{ii.profilename}}({{ii.investorprofileid}})</h1>
+
+<table border="1" align="center">
+       <tr>
+          <td><label> Name: </label></td>
+           <td> <input type="text" value="{{ii.profilename}}" name="profilename" readonly> </td>
+       </tr>
+        <tr>
+        <td><label>Profile Type:</label> </td>
+        <td> <input type="text" value="{{ii.profiletype}}" name="profiletype" readonly> </td>
+         </tr>
+        <tr>
+        <td><label>AUM (USD):</label></td>
+         <td> <input type="text" value="{{ii.aum}}" name="aum" readonly> </td>
+        </tr>
+        <tr>
+         <td><label>AA:</label></td>
+         <td> <input type="text" value="{{ii.aa}}" name="aa" readonly> </td>
+        </tr>
+        <tr>
+            <th colspan="2">Service Providers</th>
+        </tr>
+        <tr>
+         <td><label>Actuary:</label></td>
+         <td> <input type="text" value="{{ii.actuary}}" name="actuary" readonly> </td>
+        </tr>
+        <tr>
+         <td><label>Auditor:</label></td>
+         <td> <input type="text" value="{{ii.auditor}}" name="auditor" readonly> </td>
+        </tr>
+        <tr>
+         <td><label>Custodian:</label></td>
+         <td> <input type="text" value="{{ii.custodian}}" name="custodian" readonly> </td>
+        </tr>
+        <tr>
+         <td><label>Lead Consultant:</label></td>
+         <td> <input type="text" value="{{ii.leadconsultant}}" name="leadconsultant" readonly> </td>
+        </tr>
+         <tr>
+            <th colspan="2">People</th>
+         </tr>
+        <tr>
+         <td><label>Main Contact:</label></td>
+         <td> <input type="text" value="{{ii.mcontact}}" name="mcontact" readonly> </td>
+        </tr>
+        <tr>
+         <td><label>Email:</label></td>
+         <td> <input type="text" value="{{ii.email}}" name="email" readonly> </td>
+        </tr>
+
+
+</table>
+
+  {% endfor %}
+</body>
+</html>
