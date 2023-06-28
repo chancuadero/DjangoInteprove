@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/58bef72b-70b1-415c-8159-c99612169b1a/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/inteprove",
+    "appService.deploySubpath": "."
+}
