@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-bly3sq+p6*a$9-9^gx#2i)-c_hv4!j#hs9-3^3&_$x!-x4_@)q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['inteprove.azurewebsites.net']
+ALLOWED_HOSTS = ['http://inteprove.azurewebsites.net/']
 
 
 # Application definition
