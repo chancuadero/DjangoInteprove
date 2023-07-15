@@ -97,18 +97,6 @@
             <a href="/inteproveapp/viewProject"><input type="button" value="View Project"  class="btn"> </a>
             <a href="/inteproveapp/signOut"> <input type="button" value="Sign Out"  class="btn"> </a>
 
-
-
-        <div class="form">
-                <h3>Add New Updates</h3>
-            <form action="" method="post">
-                    {% csrf_token %}
-                {{form.as_p}}
-                <input type="submit" value="Submit"  class="btn">
-
-            </form>
-        </div>
-
         <div class="div-updates" >
 
             <table align="center">
@@ -119,7 +107,7 @@
             {% for u in updates%}
               <tr>
                 <td class="td">Category:</td>
-                <td class="category">{{u.category}}</td>
+                <td class="category"> <select><option>{{u.category}}</option></select></td>
              </tr>
              <tr>
                 <td class="td">Notes:</td>
@@ -135,5 +123,15 @@
             {% endfor %}
              </table>
         </div>
+
+        <div class="form">
+            <h3>Add New Updates</h3>
+        <form action="" method="post">
+                {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Submit"  class="btn">
+
+        </form>
+    </div>
 </body>
 </html>

@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-``
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-bly3sq+p6*a$9-9^gx#2i)-c_hv4!j#hs9-3^3&_$x!-x4_@)q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['http://inteprove.azurewebsites.net/']
 
@@ -76,13 +75,13 @@ WSGI_APPLICATION = 'inteprove.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'djangointeprove',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-        'OPTIONS': {'init_command': "set sql_mode='strict_trans_tables'"},
+        'USER': 'inteprove_django',
+        'PASSWORD': 'os.getenv("DB_PASSWORD")',
+        'HOST': 'djangointeprove.postgres.database.azure.com',
+        'PORT': '5432',
+        'OPTIONS': {"sslmode": "require"},
     }
 }
 
